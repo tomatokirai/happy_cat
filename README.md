@@ -1,24 +1,74 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column                 | Type   | Options                   |
+| ---------------------- | ------ | --------------------------|
+| name                   | string | null: false               |
+| nickname               | string | null: false               |
+| age                    | string | null: false               |
+| birth_day              | date   | null: false               |
+| type                   | string | null: false               |
+| birth_place            | string | null: false               |
+| raise                  | string | null: false               |
+| weight                 | string | null: false               |
+| charm_point            | string | null: false               |
+| personality            | string | null: false               |
+| strong_point           | string | null: false     
 
-* Ruby version
+## association
 
-* System dependencies
+  has_many :diaries
+  has_many :best_shots
+  has_many :diary_comments
+  has_many :best_shot_comments
 
-* Configuration
+## diaries テーブル
 
-* Database creation
+| Column             | Type            | Options                         |
+| ------------------ | --------------- | ------------------------------- |
+| user               | references      | null: false, foreign_key: true  |
+| title              | string          | null: false                     |
+| text               | text            | null: false                     |
+| date               | datetime        | null: false                     |
 
-* Database initialization
+## association
 
-* How to run the test suite
+belongs_to :user
+has_many :diary_comments
 
-* Services (job queues, cache servers, search engines, etc.)
+## diary_comments テーブル
 
-* Deployment instructions
+| Column     | Type       | Options                        |
+| ---------- | ---------- | ------------------------------ |
+| user       | references | null: false, foreign_key: true |
+| diary      | references | null: false, foreign_key: true |
+| content    | string     | null: false                    |
+ 
+ ## association
 
-* ...
+belongs_to :user
+belongs_to :diary
+
+## best_shots テーブル
+
+| Column             | Type            |Options                         |
+| ------------------ | --------------- |------------------------------- |
+| title              | string          | null: false                    |
+| user               | references      | null: false, foreign_key: true |
+ 
+## association
+
+belongs_to :user
+
+## best_shot_comments テーブル
+
+| Column             | Type            |Options                         |
+| ------------------ | --------------- |------------------------------- |
+| comment            | string          | null: false                    |
+| best_shot          | references      | null: false, foreign_key: true |
+| user               | references      | null: false, foreign_key: true |
+ 
+## association
+
+belongs_to :best_shot
