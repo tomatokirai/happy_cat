@@ -14,7 +14,10 @@
 | weight                 | string | null: false               |
 | charm_point            | string | null: false               |
 | personality            | string | null: false               |
-| strong_point           | string | null: false     
+| strong_point           | string | null: false               |
+| weak_point             | string | null: false               |
+| email                  | string | null: false, unique: true |
+| encrypted_password     | string | null: false               |
 
 ## association
 
