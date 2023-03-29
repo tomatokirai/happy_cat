@@ -18,17 +18,20 @@ body {
   /* rtl:raw:
   right: 0;
   */
-  bottom: 0;
+  /* bottom: 0; */
   /* rtl:remove */
   left: 0;
+  
+
   z-index: 100; /* Behind the navbar */
   padding: 48px 0 0; /* Height of navbar */
   box-shadow: inset -1px 0 0 rgba(0, 0, 0, .1);
   background-image: url(cat-image1.png);
-  background-position: center;
+  background-position: center bottom 200px;
   background-size: contain;
   background-repeat: no-repeat;
 }
+
 
 
 @media (max-width: 767.98px) {
@@ -70,6 +73,24 @@ body {
   text-transform: uppercase;
 }
 
+.icon {
+  width: 35px;
+  height: 35px;
+}
+
+
+
+.nav-link:hover {
+  color: darkorange !important;
+}
+
+#sidebarMenu {
+  background-color: rgb(211, 240, 216) !important;
+  width: 200px !important;
+  height: 1000px !important;
+}
+
+
 /*
  * Navbar
  */
@@ -102,4 +123,17 @@ body {
 .form-control-dark:focus {
   border-color: transparent;
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
+}
+
+header {
+  /* background-color: #333; */
+  color: #ec9c08;
+  font-size: 80px;
+  font-family: fantasy, Impact, sans-serif; /* フォントを追加 */
+  letter-spacing: 0.1em; /* 文字間隔を取る */
+  word-spacing: 5.0em; /* 単語間のスペースを0.2emに設定 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
 }
