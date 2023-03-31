@@ -53,6 +53,8 @@
     </style>
 
     
+
+    
     <!-- Custom styles for this template -->
     <link href="dashboard.css" rel="stylesheet">
   </head>
@@ -82,55 +84,59 @@
 
 
   <div class="all">
-      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"><span><%= image_tag("sun.png", alt: "日記", class: "sun-icon") %></span>
-        <div class="position-sticky pt-2" >
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center" aria-current="page" href="#">
-                <span data-feather="profile" class="me-2"><%= image_tag("cat-image5.png", alt: "プロフィール", class: "icon") %></span>
-                Profile
-                <span><%= image_tag("cat-image5.png", alt: "プロフィール", class: "icon") %></span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center" href="#">
-                <span data-feather="diary" class="me-2"><%= image_tag("cat-image6.png", alt: "日記", class: "icon") %></span>
-                Diary
-                <span><%= image_tag("cat-image6.png", alt: "日記", class: "icon") %></span>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link d-flex align-items-center" href="#">
-                <span data-feather="best_shot" class="me-2"><%= image_tag("cat-image7.png", alt: "ベストショット", class: "icon") %></span>
-                BestShot
-                <span><%= image_tag("cat-image7.png", alt: "ベストショット", class: "icon") %></span>
-              </a>
-            </li>
-            <% if user_signed_in? %>
-              <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
-                <span data-feather="log_out" class="me-2"><%= image_tag("cat-image4.png", alt: "ログアウト", class: "icon") %></span>
-                ログアウト
-                <span><%= image_tag("cat-image4.png", alt: "ログアウト", class: "icon") %></span>
-              <% end %>
-            <% else %>
-              <%= link_to new_user_registration_path, method: :get, class: "nav-link" do %>
-                <span data-feather="sign_up" class="me-2"><%= image_tag("cat-image3.png", alt: "新規登録", class: "icon") %></span>
-                SignUp
-                <span><%= image_tag("cat-image3.png", alt: "新規登録", class: "icon") %></span>
-              <% end %>
-              <%= link_to new_user_session_path, method: :get, class: "nav-link" do %>
-                <span data-feather="sign_in" class="me-2"><%= image_tag("cat-image4.png", alt: "ログイン", class: "icon") %></span>
-                SignIn
-                <span><%= image_tag("cat-image4.png", alt: "ログイン", class: "icon") %></span>
-              <% end %>
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"><%= image_tag("sun.png", alt: "日記", class: "sun-icon") %>
+      <div class="position-sticky pt-2" >
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" aria-current="page" href="#">
+              <span data-feather="profile" class="me-2"><%= image_tag("cat-image5.png", alt: "プロフィール", class: "icon") %></span>
+              Profile
+              <span><%= image_tag("cat-image5.png", alt: "プロフィール", class: "icon") %></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="#">
+              <span data-feather="diary" class="me-2"><%= image_tag("cat-image6.png", alt: "日記", class: "icon") %></span>
+              Diary
+              <span><%= image_tag("cat-image6.png", alt: "日記", class: "icon") %></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="#">
+              <span data-feather="best_shot" class="me-2"><%= image_tag("cat-image7.png", alt: "ベストショット", class: "icon") %></span>
+              BestShot
+              <span><%= image_tag("cat-image7.png", alt: "ベストショット", class: "icon") %></span>
+            </a>
+          </li>
+          <% if user_signed_in? %>
+            <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+              <span data-feather="log_out" class="me-2"><%= image_tag("cat-image4.png", alt: "ログアウト", class: "icon") %></span>
+              ログアウト
+              <span><%= image_tag("cat-image4.png", alt: "ログアウト", class: "icon") %></span>
             <% end %>
-          </ul>
-        </div>
-      </nav>
+          <% else %>
+            <%= link_to new_user_registration_path, method: :get, class: "nav-link" do %>
+              <span data-feather="sign_up" class="me-2"><%= image_tag("cat-image3.png", alt: "新規登録", class: "icon") %></span>
+              SignUp
+              <span><%= image_tag("cat-image3.png", alt: "新規登録", class: "icon") %></span>
+            <% end %>
+            <%= link_to new_user_session_path, method: :get, class: "nav-link" do %>
+              <span data-feather="sign_in" class="me-2"><%= image_tag("cat-image4.png", alt: "ログイン", class: "icon") %></span>
+              SignIn
+              <span><%= image_tag("cat-image4.png", alt: "ログイン", class: "icon") %></span>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+    
     <div id="slideshow">
-      <%= image_tag "cat-image1.jpg", alt: "ログイン", width: "100%", height: "700px" %>
-      <%= image_tag "cat-image2.jpg", alt: "ログイン", width: "100%", height: "700px" %>
-      <%= image_tag "cat-image4.jpg", alt: "ログイン", width: "100%", height: "700px" %>
+      <%= image_tag "cat-image1.jpg", alt: "ログイン", class: "show" %>
+      <%= image_tag "cat-image2.jpg", alt: "ログイン" %>
+      <%= image_tag "cat-image4.jpg", alt: "ログイン" %>
+      <%= image_tag "cat-image8.png", alt: "ログイン" %>
+      <%= image_tag "cat-image9.png", alt: "ログイン" %> 
+      <%# <%= image_tag "cat3.jpg", alt: "ログイン", width: "100%", height: "700px" %> 
     </div>
     <script>
       var slideshow = document.getElementById("slideshow");
@@ -145,7 +151,12 @@
 
       setInterval(nextImage, 5000);
     </script>
-    
+    <div class="back-image">
+      <%= image_tag "cat-image2.png", alt: "ログイン", width: "100%", height: "500px" %>
+      <div class="image-text">
+        <h1>家族との大切な時間をたくさん残そう</h1>
+      </div>
+    </div>
 
   </div>
 
