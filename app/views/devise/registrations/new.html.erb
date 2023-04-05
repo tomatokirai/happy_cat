@@ -1,0 +1,104 @@
+<!-- 新規登録フォームのコンテナー -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-7">
+
+      <!-- 新規登録フォーム -->
+      <div class="card shadow-lg border-0 rounded-lg mt-5">
+        <div class="card-header">
+          <h3 class="text-center font-weight-light my-1">アカウントとプロフィールを作成する</h3>
+        </div>
+        <div class="card-body">
+          <%= form_with model: @user, url: user_registration_path, class: 'registration-main', local: true do %>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <div class="form-floating mb-3 mb-md-0">
+                  <input class="form-control" id="inputName" type="text"  name="user[name]" placeholder="名前を入力してください" />
+                  <label for="inputName">名前</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input class="form-control" id="inputNickName" type="text" name="user[nickname]" placeholder="姓を入力してください" />
+                  <label for="inputNickName">ニックネーム</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input class="form-control" id="inputEmail" type="email" name="user[email]" placeholder="メールアドレスを入力してください" />
+              <label for="inputEmail">メールアドレス</label>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <div class="form-floating mb-3 mb-md-0">
+                  <input class="form-control" id="inputPassword" type="password" name="user[password]" placeholder="パスワードを入力してください" />
+                  <label for="inputPassword">パスワード</label>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="form-floating">
+                  <input class="form-control" id="inputConfirmPassword" type="password" placeholder="パスワードを再度入力してください" />
+                  <label for="inputConfirmPassword">パスワードの確認</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="age-input" class="form-label">年齢</label>
+                <input type="number" class="form-control" id="age-input" name="user[age]" placeholder="年齢を選んでください">
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="birthday-input" class="form-label">誕生日</label>
+                <input type="date" class="form-control" id="birthday-input" name="user[birth_day]" placeholder="Enter your birthday">
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="inputBreed" class="form-label">種別</label>
+                <input class="form-control" id="inputBreed" type="text" name="user[breed]" placeholder="(例) 三毛猫" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputWeight" class="form-label">体重</label>
+                <input class="form-control" id="inputNickName" type="text" name="user[weight]" placeholder="任意で入力してください" />
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col-md-6">
+                <label for="inputBirthPlace" class="form-label">生まれ</label>
+                <input class="form-control" id="inputBirthPlace" type="text" name="user[birth_place]" placeholder="(例) 川越生まれ" />
+              </div>
+              <div class="col-md-6">
+                <label for="inputRaise" class="form-label">育ち</label>
+                <input class="form-control" id="inputRaise" type="text" name="user[raise]" placeholder="(例) 家猫育ち" />
+              </div>
+            </div>
+            <div class="form-floating mb-3">
+              <input class="form-control" id="inputPersonality" name="user[personality]" placeholder="ここに性格を入力してください"/>
+              <label for="inputPersonality">性格</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input class="form-control" id="inputCharmPoint" name="user[charm_point]" placeholder="ここにチャームポイントを入力してください"/>
+              <label for="inputCharmPoint">チャームポイント</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input class="form-control" id="inputEncounter" name="user[encounter]" placeholder="ここに出会いを入力してください"/>
+              <label for="inputEncounter">出会い</label>
+            </div>
+            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+              <a class="small" href=" /users/sign_in/">アカウントをお持ちの場合</a>
+              <button class="btn btn-primary" type="submit">アカウントを作成する</button>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+

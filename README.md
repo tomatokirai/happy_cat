@@ -6,15 +6,17 @@
 | ---------------------- | ------ | --------------------------|
 | name                   | string | null: false               |
 | nickname               | string | null: false               |
-| age                    | string | null: false               |
+| age                    | number | null: false               |
 | birth_day              | date   | null: false               |
-| type                   | string | null: false               |
+| breed                  | string | null: false               |
 | birth_place            | string | null: false               |
 | raise                  | string | null: false               |
-| weight                 | string | null: false               |
+| weight                 | string |                           |
 | charm_point            | string | null: false               |
 | personality            | string | null: false               |
-| strong_point           | string | null: false     
+| encounter              | string | null: false               
+| email                  | string | null: false, unique: true |
+| encrypted_password     | string | null: false               |
 
 ## association
 

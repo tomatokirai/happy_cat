@@ -1,0 +1,37 @@
+<!-- ログインフォームのコンテナー -->
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-lg-5">
+
+      <!-- ログインフォーム -->
+      <div class="card shadow-lg border-0 rounded-lg mt-5">
+        <div class="card-header">
+          <h3 class="text-center font-weight-light my-4">ログイン</h3>
+        </div>
+        <div class="card-body">
+          <%= form_with model: @user, url: user_session_path, class: 'session-main', local: true do %>
+            <div class="form-floating mb-3">
+              <input class="form-control" id="inputEmail" type="email" name="user[email]" placeholder="メールアドレスを入力してください" />
+              <label for="inputEmail">メールアドレス</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input class="form-control" id="inputPassword" type="password" name="user[password]" placeholder="パスワードを入力してください" />
+              <label for="inputPassword">パスワード</label>
+            </div>
+            <div class="form-check mb-3">
+              <input class="form-check-input" id="rememberPasswordCheck" type="checkbox" value="" />
+              <label class="form-check-label" for="rememberPasswordCheck">パスワードを保存する</label>
+            </div>
+            <div class="d-flex align-items-center justify-content-between mt-4 mb-0">
+              <button class="btn btn-primary" type="submit">ログイン</button>
+            </div>
+          <% end %>
+        </div>
+        <div class="card-footer text-center py-3">
+          <div class="small"><a href="/users/sign_up/">アカウントをお持ちでない場合</a></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
