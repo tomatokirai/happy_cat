@@ -88,11 +88,11 @@
       <div class="position-sticky pt-2" >
         <ul class="nav flex-column">
           <li class="nav-item">
-            <a class="nav-link d-flex align-items-center" aria-current="page" href="#">
+            <%= link_to "/profiles/:id", method: :get, class: "nav-link" do %>
               <span data-feather="profile" class="me-2"><%= image_tag("cat-image5.png", alt: "プロフィール", class: "icon") %></span>
               Profile
               <span><%= image_tag("cat-image5.png", alt: "プロフィール", class: "icon") %></span>
-            </a>
+            <% end %>
           </li>
           <li class="nav-item">
             <a class="nav-link d-flex align-items-center" href="#">
