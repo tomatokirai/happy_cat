@@ -5,15 +5,9 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   with_options presence: true do
-    validates :name
-    validates :nickname
-    validates :age
-    validates :birth_day
-    validates :breed
-    validates :birth_place
-    validates :raise
-    validates :charm_point
-    validates :personality
-    validates :encounter
+    validates :first_name
+    validates :last_name
+    validates :first_name_kana
+    validates :last_name_kana
   end
 end

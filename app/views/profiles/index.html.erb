@@ -1,0 +1,56 @@
+<main class="main">
+  <div class="inner">
+    <% if user_signed_in? %>
+      <div class="greeting">
+        <%= link_to "#{current_user.last_name}さんの家族一覧ページ", "/users/#{current_user.id}", class: :greeting__link%>
+      </div>
+    <% end %>
+  </div>
+    <div class="all">
+    <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"><%= image_tag("sun.png", alt: "日記", class: "sun-icon") %>
+      <div class="position-sticky pt-2" >
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <%= link_to profiles_path, method: :get, class: "nav-link" do %>
+              <span data-feather="profile" class="me-2"><%= image_tag("cat-image5.png", alt: "プロフィール", class: "icon") %></span>
+              Profile
+              <span><%= image_tag("cat-image5.png", alt: "プロフィール", class: "icon") %></span>
+            <% end %>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="#">
+              <span data-feather="diary" class="me-2"><%= image_tag("cat-image6.png", alt: "日記", class: "icon") %></span>
+              Diary
+              <span><%= image_tag("cat-image6.png", alt: "日記", class: "icon") %></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link d-flex align-items-center" href="#">
+              <span data-feather="best_shot" class="me-2"><%= image_tag("cat-image7.png", alt: "ベストショット", class: "icon") %></span>
+              BestShot
+              <span><%= image_tag("cat-image7.png", alt: "ベストショット", class: "icon") %></span>
+            </a>
+          </li>
+          <% if user_signed_in? %>
+            <%= link_to destroy_user_session_path, method: :delete, class: "nav-link" do %>
+              <span data-feather="log_out" class="me-2"><%= image_tag("cat-image4.png", alt: "ログアウト", class: "icon") %></span>
+              ログアウト
+              <span><%= image_tag("cat-image4.png", alt: "ログアウト", class: "icon") %></span>
+            <% end %>
+          <% else %>
+            <%= link_to new_user_registration_path, method: :get, class: "nav-link" do %>
+              <span data-feather="sign_up" class="me-2"><%= image_tag("cat-image3.png", alt: "新規登録", class: "icon") %></span>
+              SignUp
+              <span><%= image_tag("cat-image3.png", alt: "新規登録", class: "icon") %></span>
+            <% end %>
+            <%= link_to new_user_session_path, method: :get, class: "nav-link" do %>
+              <span data-feather="sign_in" class="me-2"><%= image_tag("cat-image4.png", alt: "ログイン", class: "icon") %></span>
+              SignIn
+              <span><%= image_tag("cat-image4.png", alt: "ログイン", class: "icon") %></span>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</main>

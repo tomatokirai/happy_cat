@@ -10,7 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_03_26_034916) do
+ActiveRecord::Schema.define(version: 2023_04_06_084857) do
+
+  create_table "profiles", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.string "name", null: false
+    t.string "nickname", null: false
+    t.string "age", null: false
+    t.string "breed", null: false
+    t.string "weight", null: false
+    t.date "birth_day", null: false
+    t.string "birth_place", null: false
+    t.string "personality", null: false
+    t.string "charm_point", null: false
+    t.string "encounter", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "first_name", null: false
@@ -28,4 +45,5 @@ ActiveRecord::Schema.define(version: 2023_03_26_034916) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "profiles", "users"
 end

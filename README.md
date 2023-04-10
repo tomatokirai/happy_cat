@@ -4,22 +4,37 @@
 
 | Column                 | Type   | Options                   |
 | ---------------------- | ------ | --------------------------|
-| name                   | string | null: false               |
-| nickname               | string | null: false               |
-| age                    | number | null: false               |
-| birth_day              | date   | null: false               |
-| breed                  | string | null: false               |
-| birth_place            | string | null: false               |
-| raise                  | string | null: false               |
-| weight                 | string |                           |
-| charm_point            | string | null: false               |
-| personality            | string | null: false               |
-| encounter              | string | null: false               
+| first_name             | string | null: false               |
+| last_name              | string | null: false               |
+| first_name_kana        | string | null: false               |
+| last_name_kana         | string | null: false               |
 | email                  | string | null: false, unique: true |
 | encrypted_password     | string | null: false               |
 
 ## association
+  has_many :profile
+  has_many :diaries
+  has_many :best_shots
+  has_many :diary_comments
+  has_many :best_shot_comments
 
+## profiles テーブル
+
+| Column                 | Type   | Options                   |
+| ---------------------- | ------ | --------------------------|
+| name                   | string | null: false               |
+| nickname               | string | null: false               |
+| age                    | string | null: false               |
+| breed                  | string | null: false               |
+| weight                 | string | null: false               |
+| birth_day              | date   | null: false               |
+| birth_place            | string | null: false               |
+| personality            | string | null: false               |
+| charm_point            | string | null: false               |
+| encounter              | string | null: false               |
+
+## association
+  belongs_to :user
   has_many :diaries
   has_many :best_shots
   has_many :diary_comments
