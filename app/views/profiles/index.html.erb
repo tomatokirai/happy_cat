@@ -1,12 +1,5 @@
 <main class="main">
-  <div class="inner">
-    <% if user_signed_in? %>
-      <div class="greeting">
-        <%= link_to "#{current_user.last_name}さんの家族一覧ページ", "/users/#{current_user.id}", class: :greeting__link%>
-      </div>
-    <% end %>
-  </div>
-    <div class="all">
+  <div class="all">
     <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-light sidebar collapse"><%= image_tag("sun.png", alt: "日記", class: "sun-icon") %>
       <div class="position-sticky pt-2" >
         <ul class="nav flex-column">
@@ -52,5 +45,13 @@
         </ul>
       </div>
     </nav>
+  </div>
+  <div class="inner">
+    <% if user_signed_in? %>
+      <div class="greeting">
+        <h1><%= current_user.last_name%>さんの家族プロフィール</h1>
+      </div>
+    <% end %>
+    <%= link_to "プロフィールを追加する", new_profile_path %>
   </div>
 </main>

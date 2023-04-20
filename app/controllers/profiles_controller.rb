@@ -3,6 +3,14 @@ class ProfilesController < ApplicationController
   def index
   end
 
+  def new
+    @profile = Profile.new
+  end
+
+  def create
+  end
+
+
   # def show
   #   @user = @user_profile
   # end
